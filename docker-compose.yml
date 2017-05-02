@@ -1,0 +1,31 @@
+version: '2'
+services:
+  # db:
+  #   image: mysql:5.6
+  #   environment:
+  #    - MYSQL_DATABASE=praylocal
+  #    - MYSQL_ROOT_PASSWORD=""
+  #    - MYSQL_USER=root
+  #    - MYSQL_PASSWORD=""
+  # redis:
+  #   image: redis:alpine
+  app:
+    build:
+      # specify to use dev Dockerfile
+      dockerfile: Dockerfile.dev
+      # find the Dockerfile.dev in ./app
+      context: ./app
+    volumes:
+      # mount the host ./app to the /app dir in docker 
+      # for automatic reloading
+      - ./app:/app
+    ports:
+      - "8081:8081"
+    environment:
+      - NODE_ENV=development
+      - PORT=${PORT}
+      - OAUTH_CLIENT_SECRET=${OAUTH_CLIENT_SECRET}
+      - LOGGLY_TOKEN=${LOGGLY_TOKEN}
+      - DEV_DB_PWD=${DEV_DB_PWD}
+    # links:
+    #   - redis
