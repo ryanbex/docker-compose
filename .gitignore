@@ -7,8 +7,6 @@ node_modules
 .env
 .docker.env
 *sh
-Dockerfile.dev
-docker-compose.yml
 
 !.elasticbeanstalk/config.yml
 # Elastic Beanstalk Files
