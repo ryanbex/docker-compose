@@ -4,7 +4,6 @@
 *zip
 node_modules
 .idea
-uploads/*
 .env
 .docker.env
 *sh
