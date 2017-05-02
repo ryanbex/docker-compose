@@ -1,0 +1,18 @@
+*~
+*.log
+*.DS_Store
+*zip
+node_modules
+.idea
+uploads/*
+.env
+.docker.env
+*sh
+Dockerfile.dev
+docker-compose.yml
+
+!.elasticbeanstalk/config.yml
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
